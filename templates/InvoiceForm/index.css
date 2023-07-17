@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F1F5FE;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  background: #F1F5FE;
+}
+
+.form-body {
+  background: #FFFFFF;
+  max-width: 1100px;
+  width: 100%;
+
+  border-radius: 20px;
+  /* removed */
+  padding: 40px 20px;
+}
+
+
+.form-field-wrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 400px);
+  grid-template-rows: repeat(2, max-content);
+  justify-content: space-between;
+  column-gap: 40px;
+  row-gap: 60px;
+  border-bottom: 2px solid #000;
+  padding: 0 0 40px 0;
+}
+
+.form-header{
+  display: flex;
+  justify-content: space-between;
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.invoice-item-field.form-title-field{
+  max-width: 500px;
+  min-width: 200px;
+  width: 100%;
+}
+
+
+
+.form-logo-field{
+  width: 170px;
+  background-color: #247FFF;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #fff;
+
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+}
+
+.form-field-from{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.form-field-to{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.form-field-title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+.show-details{
+  color: #247FFF;
+  cursor: pointer;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.details-wrapper{
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.details-wrapper.active{
+  display: flex;
+}
+
+.invoice-list-wrapper {
+  display: grid;
+  grid-template-columns: 32px calc(100% - 32px - 32px - 150px - 65px) 150px 65px;
+  grid-template-rows: 46px auto;
+  align-items: center;
+  gap: 16px;
+}
+
+.invoice-list{
+  padding-bottom: 10px;
+  margin-top: 30px;
+  border-bottom: 1px dashed #ccc;
+}
+.remove-invoice-item {
+  grid-column: 1/2;
+  height: 20px;
+  cursor: pointer;
+}
+.draggable-invoice-item {
+  grid-column: 1/2;
+  grid-row: 2/3;
+  height: 20px;
+  cursor: grab;
+}
+.remove-invoice-item svg,
+.draggable-invoice-item svg {
+  width: 100%;
+  height: 100%;
+}
+.invoice-item-field-list {
+  display: grid;
+  grid-template-columns: minmax(200px , 350px) minmax(50px , 150px) minmax(50px , 150px);
+
+  grid-template-rows: 46px 120px;
+  gap: 16px;
+  grid-column: 2/3;
+  grid-row: 1/3;
+}
+
+.invoice-item-field input, 
+.invoice-item-field textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+}
+
+.invoice-item-field {
+  position: relative;
+}
+
+
+.invoice-item-field .form-input {
+  font-family: 'Montserrat', sans-serif;
+  height: 46px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  border: 2px solid #E9F2FF;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding-left: 25px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.invoice-item-field .form-input.form-textarea{
+  height: 120px;
+}
+
+.invoice-item-field .form-input:focus {
+  border-color: #247FFF;
+}
+
+.invoice-item-field.error .form-input {
+  border-color: #e00000;
+}
+
+.form-field-placeholder {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #3B5983;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.form-field-placeholder.textarea-placeholder{
+  top: 25px;
+
+}
+
+.invoice-item-field.active .form-field-placeholder,
+.invoice-item-field .form-input:focus ~ .form-field-placeholder {
+  top: 0px;
+  background: #FFFFFF;
+  padding: 4px 5px;
+
+}
+
+.amount{
+  margin-left: auto;
+}
+
+.tax-toggler-label{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.add-item-wrapper{
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.add-invoice-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  border-radius: 5px;
+  color: green;
+  font-size: 18px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+
+.total-amounts-wrapper{
+  width: max-content;
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.total-amounts{
+  display: flex;
+  align-items: center;
+  text-align: right;
+}
+
+.total-amounts-text{
+  text-align: right;
+  min-width: 105px;
+
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+.notes{
+  margin-top: 30px;
+}
+
+.notes-field{
+  width: 100%;
+  height: 160px;
+  resize: none;
+  margin-top: 15px;
+  font-size: 14px;
+  line-height: 16px;
+  color: #000000;
+  border: 2px solid #E9F2FF;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding-left: 25px;
+  padding-top: 10px;
+  outline: none;
+}
+
+.notes-title, .signature-title{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.signature{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.signature-button{
+  padding: 10px;
+  margin-top: 30px;
+  background: #247FFF;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}

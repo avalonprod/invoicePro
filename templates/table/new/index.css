@@ -1,0 +1,169 @@
+/* #28b4a7
+#e7eff5
+#f8fbfe */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #F1F5FE;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  overflow: hidden;
+}
+
+
+.table-wrapper {
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  width: 90%;
+  height: 90vh;
+  border-radius: 5px;
+  overflow: auto;
+  background: #FFF;
+  border-bottom: 2px solid #e7eff5;
+}
+
+.table-options {
+  width:100%;
+  position: sticky;
+  z-index: 1;
+  background: #fff;
+}
+
+.table {
+  position: relative;
+  width: 100%;
+
+}
+
+.table-options .folders {
+  /* height: 50px; */
+  border-bottom: 1px solid #e7eff5;
+}
+
+.table-options .folders .folders-list {
+  display: flex;
+  gap: 20px;
+  /* padding: 20px ; */
+  list-style: none;
+
+}
+
+.table-options .folders .folders-item {
+  padding: 20px;
+  cursor: pointer;
+}
+
+
+.table-options .folders .folders-item.active {
+  color: #28b4a7;
+  border-bottom: 2px solid #28b4a7;
+ 
+}
+
+.table-options .folders .folders-item.active .documents-count {
+  background: rgba(40, 180, 167, 10%);
+}
+
+.table-options .folders .folders-item .folders-name {
+  font-size: 16px;
+  font-weight: 400;
+  margin-right: 5px;
+}
+
+.table-options .folders .folders-item .documents-count {
+  padding: 1px 8px;
+  border-radius: 5px;
+  background: #e7eff5;
+}
+
+.table-options .filters {
+  height: 70px;
+  border-bottom: 1px solid #e7eff5;
+}
+
+
+
+
+.table-header {
+  width: 100%;
+  position: sticky;
+  background: #e7eff5;
+  
+}
+
+
+.table-header tr {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.table-header th {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 0px;
+}
+
+
+.table-body tr {
+  display: grid;
+  grid-template-columns: 20px 1fr 1fr 1fr 1fr 1fr;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 1px solid #e7eff5;
+}
+
+.table-body tr:hover {
+  border-top: 1px solid #28b4a7;
+  border-bottom: 1px solid #28b4a7;
+  background: rgba(40, 180, 167, 20%);
+}
+
+.table-body tr td {
+  padding: 10px 0px;
+}
+
+.table-body tr td .marked-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.table-body tr td .marked-label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url(disabled-marked.svg);
+  cursor: pointer;
+}
+
+.table-body tr td .marked-checkbox:checked + .marked-label{
+  background: url(marked.svg);
+}
+
+.table-footer {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  background: #ffffff;
+  width: 100%;
+  height: 60px;
+}
+
+.table-footer .arrow-left, 
+.table-footer .arrow-right {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #e7eff5;
+  border: 1px solid #e7eff5;
+  cursor: pointer;
+}

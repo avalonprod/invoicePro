@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main>
+    <div class="decarating-circle"></div>
+    <form action="/" class="form-body">
+     
+      <div class="form-wrapper">
+        <div class="logo">
+          <img src="logo.svg" alt="logo">
+        </div>
+        
+        <div class="form-title">Welcome</div>
+        <div class="form-subtitle">Sign up</div>
+        <div class="form-fields">
+          <div class="form-field error">
+            <input type="text" class="form-input" name="firstName" id="first-name">
+            <span class="form-field-placeholder">First name</span>
+            <span class="helper-text">Это поле не может быть пустым.</span>
+          </div>
+          <div class="form-field">
+            <input type="text" class="form-input" name="lastName" id="last-name">
+            <span class="form-field-placeholder">Last name</span>
+            <span class="helper-text"></span>
+          </div>
+          <div class="form-field">
+            <input type="text" class="form-input" name="companyName" id="company-name">
+            <span class="form-field-placeholder">Company name</span>
+            <span class="helper-text"></span>
+          </div>
+          <div class="form-field">
+            <input type="email" class="form-input" name="email" id="email">
+            <span class="form-field-placeholder">Email address</span>
+            <span class="helper-text"></span>
+          </div>
+          <div class="form-field">
+            <input type="password" class="form-input" name="password" id="password">
+            <span class="form-field-placeholder">Password</span>
+            <span class="helper-text"></span>
+          </div>
+          <div class="form-field">
+            <input type="password" class="form-input" name="confirmPassword" id="confirm-password">
+            <span class="form-field-placeholder">Confirm Password</span>
+            <span class="helper-text"></span>
+          </div>
+        </div>
+        <div class="form-button">
+          <button class="button button-submit">Sign up</button>
+        </div>
+        <div class="button-divider">
+          or
+        </div>
+        <div class="form-button">
+          <button class="button button-second">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
